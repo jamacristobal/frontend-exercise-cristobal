@@ -1,0 +1,41 @@
+<div class="form-block">
+    <form [formGroup]="form">
+        <div class="row">
+            <div class="col-md-12">
+                <mdb-form-control>
+                    <input mdbInput  type="number" formControlName="employeeId" (change)="valueUpdated()" class="form-control" id="employeeId" required>
+                    <label mdbLabel class="form-label" for="employeeId">Employee Id</label>
+                    <mdb-error *ngIf="employeeId?.invalid && (employeeId?.dirty || employeeId?.touched)">Employee Id is required</mdb-error>
+                </mdb-form-control>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mdb-form-control>
+                    <input mdbInput  type="text" formControlName="firstName" (change)="valueUpdated()" name="firstName" class="form-control" id="firstName">
+                    <label mdbLabel class="form-label" for="firstName">First Name</label>
+                    <mdb-error *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">First name is required</mdb-error>
+                </mdb-form-control>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mdb-form-control>
+                    <input mdbInput  type="text" formControlName="lastName" (change)="valueUpdated()" name="lastName" class="form-control" id="lastName">
+                    <label mdbLabel class="form-label" for="lastName">Last Name</label>
+                    <mdb-error *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">Last name is required</mdb-error>
+                </mdb-form-control>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mdb-form-control>
+                    <input mdbInput  type="email" formControlName="emailAddress" (change)="valueUpdated()" name="emailAddress" class="form-control" id="emailAddress">
+                    <label mdbLabel class="form-label" for="emailAddress">Email Address</label>
+                    <mdb-error *ngIf="emailAddress?.invalid && (emailAddress?.dirty || emailAddress?.touched)">Email address must be a valid email.</mdb-error>
+                </mdb-form-control>
+            </div>
+        </div>
+       
+    </form>
+</div>

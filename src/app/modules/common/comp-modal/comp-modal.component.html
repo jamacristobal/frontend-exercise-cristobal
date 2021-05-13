@@ -1,0 +1,24 @@
+<div [ngClass]="{ 'md-show': mdshow ,'md-hide': !mdshow}">
+    <div class="md-overlay"
+      (click)="onOverlayClick()"></div>
+    <div class="md-modal"
+      [class.modal-sm]="modal_sm"
+      [class.modal-md]="modal_md"
+      [class.modal-lg]="modal_lg"
+      [class.modal-xl]="modal_xl"
+      [ngClass]="modalClass">
+      <div class="md-content"
+        [ngClass]="contentClass">
+        <div class="modal-header">
+          <ng-content select="[header]"></ng-content>
+        </div>
+        <div class="modal-body">
+          <ng-content select="[body]"></ng-content>
+        </div>
+        <div footer
+          class="modal-footer">
+          <ng-content select="[footer]"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>

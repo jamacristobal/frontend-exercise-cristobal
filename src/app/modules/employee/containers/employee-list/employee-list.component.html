@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+    <button class="btn btn-primary btn-sm add-button" (click)="openModal()"><i class="fa fa-plus"></i>
+      Add Employee</button>
+    <app-emp-list [employees]="empList" (onDelete)="deleteEmployee($event)"></app-emp-list>
+    
+  </div>
+</div>
+
+<app-comp-modal #addEmployeeModal [modalClass]="'md-effect-1'" [modal_sm]="true">
+    <div header> Add Employee Form </div>
+    <div body>
+      <span *ngIf="formInvalid">All fields are required.</span>
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{errorMessage}}
+      </div>
+      <app-emp-form [form]="empForm" (updateFormValues)="onEmployeeFormUpdate($event)"></app-emp-form>
+    </div>
+    <div footer>
+        <button type="button"
+          class="btn btn-primary"
+          (click)="addEmployee()">
+          Save
+        </button>
+        <button type="button"
+          class="btn btn-secondary"
+          (click)="closeModal()">
+          Cancel
+        </button>
+    </div>
+</app-comp-modal>

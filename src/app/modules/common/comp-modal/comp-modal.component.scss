@@ -1,0 +1,154 @@
+.btn{
+    margin: 0 5px;
+  }
+  
+  .md-close-btn {
+    border: 0;
+    background: none;
+    color: #ffffff;
+    position: absolute;
+    top: 21px;
+    right: 16px;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  
+  .md-perspective {
+    height: 100%;
+    overflow: hidden;
+    body {
+      height: 100%;
+      overflow: hidden;
+      background: #222;
+      -webkit-perspective: 600px;
+      -moz-perspective: 600px;
+      perspective: 600px;
+    }
+  }
+  
+  .md-modal .container {
+    min-height: 100%;
+  }
+  
+  .md-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    // width: 100%;
+    width: calc(100vw - 4rem);
+    // max-width: 630px;
+    // min-width: 320px;
+    height: auto;
+    z-index: 1200;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  .md-show {
+    visibility: visible;
+  }
+  
+  .md-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    opacity: 0;
+    background: rgba(55, 58, 60, 0.65);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .md-show .md-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .md-show ~ .md-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .md-show .md-modal {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .md-hide{
+    visibility: hidden;
+  }
+  
+  .md-hide .md-overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .md-hide ~ .md-overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .md-hide .md-modal {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .md-content {
+    color: #666666;
+    background: #fff;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 4rem);
+    .modal-body{
+      overflow: auto;
+    }
+    .modal-header{
+      flex: 0 0 auto;
+    }
+    .modal-footer{
+      flex: 0 0 auto;
+    }
+  }
+  
+  /* Effect 1: Fade in and scale up */
+  
+  .md-effect-1 .md-content {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .md-show.md-effect-1 .md-content {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+  .md-show .md-effect-1 .md-content {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+@media (min-width: 576px){
+  .modal-sm {
+    max-width: 400px;
+  }
+}
+
